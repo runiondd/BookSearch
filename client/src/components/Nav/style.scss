@@ -1,0 +1,29 @@
+.headerLogo {
+    height: 80px;
+    width: 80px;
+    margin: 10px 10px 10px 10px;
+}
+
+.navbar {
+    background-color: white;
+    align-content: center;
+    h1 {
+        color: black;
+    }
+    h2 {
+        color: black;
+    }
+}
+
+.navLeft {
+    display: inline-block;
+
+}
+
+.navRight {
+    display: inline-block;
+}
+
+.navLink {
+    margin: 0px 2px 0px 3px;
+}
