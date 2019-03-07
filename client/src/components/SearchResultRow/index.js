@@ -7,18 +7,21 @@ function SearchResultRow(props) {
             <tbody>
                 <tr className="searchResultRow">
                     <td>
-                        Book Title: {props.bookTitle}
-                        Book Synopsis:  {props.synopsis}
-                        Book Author:  {props.author}
+                        Book Title: {props.bookTitle} 
+                        <br></br>
+                        Book Synopsis: {props.synopsis}
+                        <br></br>
+                        Book Author: {props.author}
                    </td>
                     <td>
-                        ViewBtn
-                        SaveBtn
+                    <button type="button" className="btn btn-secondary">View</button>
+                    <button type="button" className="btn btn-secondary">Save</button>
+                       
                     </td>        
                 </tr>
                 <tr className="searchResultRow">
                     <td>
-                        Book Image
+                      <img alt={props.bookImage} src={props.bookImage} />
                     </td>
                     <td>
                         Book Long Desc

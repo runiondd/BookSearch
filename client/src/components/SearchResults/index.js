@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import SearchResultRows from '../SearchResultRow';
+import SearchResultRow from '../SearchResultRow';
 import './style.scss';
 import API from "../../Utils/api";
 
@@ -17,29 +17,24 @@ class SearchResults extends Component {
         API.getBooks()
           .then(res => {
             console.log("success:", res);
-            this.setState({ books: res.data, title: "", author: "", synopsis: "" })
+            this.setState({books: res.data})
           })
           .catch(err => console.log(err));
       };
 
   render() {
     return (
-        <div>
-            <nav className="navbar navbar-light bg-light justify-content-between searchBar">
-
-                <SearchResultRows 
-                    bookTitle={this.state.books.title}
-                    author={this.state.books.author}
-                    synopsis={this.state.books.synopsis}
-                />
-                
-
-            </ nav>
-            <div>
-
-                {/* this is where we will do mapping */}
-           
-            </div>
+        <div className="bookrow">
+                {this.state.books.map((resultRow) => (
+                    <SearchResultRow
+                        key={resultRow.key}
+                        bookTitle={resultRow.title}
+                        author={resultRow.author}
+                        synopsis={resultRow.synopsis}
+                        bookImage={resultRow.bookImage}
+                    
+                    />
+                ))}
         </div>    
     )};
 }
